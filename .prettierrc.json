@@ -1,1 +1,9 @@
-{}
+{
+  "semi": true,
+  "singleQuote": true,
+  "arrowParens": "always",
+  "trailingComma": "es5",
+  "cursorOffset": -1,
+  "endOfLine": "lf",
+  "parser": "babel-ts"
+}
