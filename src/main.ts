@@ -1,5 +1,5 @@
 import { createApp, defineComponent, h } from 'vue';
-import App from './App.vue';
+import App from './App';
 
 // const App = defineComponent({
 //   render() {
