@@ -1,10 +1,7 @@
 import { defineComponent, ref, Ref, reactive, watchEffect } from 'vue';
 import { createUseStyles } from 'vue-jss';
-
 import MonacoEditor from './components/Editior/Monaca';
-
 import demos from './demo';
-
 import SchemaForm from '../lib';
 
 // TODO: 在lib中export
@@ -129,9 +126,6 @@ export default defineComponent({
     return () => {
       const classes = classesRef.value;
       const selected = selectedRef.value;
-
-      console.log(methodRef);
-
       return (
         // <StyleThemeProvider>
         // <VJSFThemeProvider theme={theme as any}>

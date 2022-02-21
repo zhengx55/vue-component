@@ -1,14 +1,18 @@
 <template>
-  <input type="text" :value="value" @input="handleChange" />
+  <input type="text" :value="value" @input="handleInputChange" />
 </template>
 
 <script lang="ts" setup="props">
-import { ref, defineProps } from 'vue';
-import { FiledPropsDefine, Schema } from '../types';
+import { ref } from 'vue';
+import { FiledPropsDefine } from '../types';
+import debounce from '../../utils/debounce';
 
+// eslint-disable-next-line no-undef
 const props = defineProps(FiledPropsDefine);
+
 const handleChange = (e: any) => {
-  console.log(e);
   props.onChange(e.target.value);
 };
+
+const handleInputChange = debounce(handleChange, 1000);
 </script>

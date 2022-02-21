@@ -1,6 +1,6 @@
 import { defineComponent, PropType } from 'vue';
 import SchemaItem from './SchemaItem';
-import { Schema, SchemaTypes } from './types';
+import { Schema } from './types';
 
 export default defineComponent({
   props: {

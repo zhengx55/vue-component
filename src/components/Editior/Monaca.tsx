@@ -4,13 +4,12 @@ import {
   onMounted,
   watch,
   onBeforeUnmount,
-  shallowReadonly,
   shallowRef,
 } from 'vue';
 
 import * as Monaco from 'monaco-editor';
 
-import type { PropType, Ref } from 'vue';
+import type { PropType } from 'vue';
 import { createUseStyles } from 'vue-jss';
 
 const useStyles = createUseStyles({
@@ -18,12 +17,13 @@ const useStyles = createUseStyles({
     border: '1px solid #eee',
     display: 'flex',
     flexDirection: 'column',
-    borderRadius: 5,
+    borderRadius: 10,
   },
   title: {
-    backgroundColor: '#eee',
+    backgroundColor: '#444886',
     padding: '10px 0',
-    paddingLeft: 20,
+    paddingLeft: 10,
+    color: '#fff',
   },
   code: {
     flexGrow: 1,
