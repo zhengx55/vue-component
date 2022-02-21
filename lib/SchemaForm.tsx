@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType, provide } from 'vue';
 import SchemaItem from './SchemaItem';
 import { Schema } from './types';
 
@@ -22,11 +22,21 @@ export default defineComponent({
       props.onChange(v);
     };
 
+    // use provide/Inject composition api to prevent circular dependencies
+    const context = { SchemaItem };
+
+    provide('item-component', context);
+
     return () => {
       const { schema, value } = props;
 
       return (
-        <SchemaItem schema={schema} value={value} onChange={handleChange} />
+        <SchemaItem
+          schema={schema}
+          rootSchema={schema}
+          value={value}
+          onChange={handleChange}
+        />
       );
     };
   },
