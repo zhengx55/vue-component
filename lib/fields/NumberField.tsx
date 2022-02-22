@@ -20,9 +20,7 @@ export default defineComponent({
 
     return () => {
       const { value } = props;
-      return (
-        <input type="text" value={value} onChange={handleDebounceChange} />
-      );
+      return <input type="text" value={value} onInput={handleDebounceChange} />;
     };
   },
 });
