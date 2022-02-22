@@ -1,10 +1,10 @@
 import { defineComponent } from 'vue';
-import { FiledPropsDefine } from '../types';
+import { FieldPropsDefine } from '../types';
 import debounce from '../../utils/debounce';
 
 export default defineComponent({
   name: 'NumberField',
-  props: FiledPropsDefine,
+  props: FieldPropsDefine,
   setup(props) {
     const handleChange = (e: any) => {
       const value = e.target.value;
@@ -21,11 +21,7 @@ export default defineComponent({
     return () => {
       const { value } = props;
       return (
-        <input
-          type="number"
-          value={value as any}
-          onChange={handleDebounceChange}
-        />
+        <input type="text" value={value} onChange={handleDebounceChange} />
       );
     };
   },

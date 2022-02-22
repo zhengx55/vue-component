@@ -1,15 +1,15 @@
 import { defineComponent } from 'vue';
 import { useVJSFContext } from '../context';
 
-import { FiledPropsDefine } from '../types';
+import { FieldPropsDefine } from '../types';
 import { isObject } from '../utils';
 
-// const SchemaItemHelper = defineComponent({ props: FiledPropsDefine });
+// const SchemaItemHelper = defineComponent({ props: FieldPropsDefine });
 // type SchemaItemDefine = typeof SchemaItemHelper;
 
 export default defineComponent({
   name: 'ObjectField',
-  props: FiledPropsDefine,
+  props: FieldPropsDefine,
   setup(props) {
     const context = useVJSFContext();
 

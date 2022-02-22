@@ -1,11 +1,10 @@
 import { defineComponent } from 'vue';
-
-import { FiledPropsDefine } from '../types';
+import { FieldPropsDefine } from '../types';
 import debounce from '../../utils/debounce';
 
 export default defineComponent({
   name: 'StringFeild',
-  props: FiledPropsDefine,
+  props: FieldPropsDefine,
   setup(props) {
     const handleChange = (e: any) => {
       console.log(e);

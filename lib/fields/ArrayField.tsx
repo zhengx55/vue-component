@@ -1,10 +1,10 @@
 import { defineComponent } from 'vue';
-import { FiledPropsDefine, Schema } from '../types';
+import { FieldPropsDefine, Schema } from '../types';
 import { useVJSFContext } from '../context';
 
 export default defineComponent({
   name: 'ArrayField',
-  props: FiledPropsDefine,
+  props: FieldPropsDefine,
   setup(props) {
     const context = useVJSFContext();
 

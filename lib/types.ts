@@ -49,7 +49,7 @@ export interface Schema {
   exclusiveMinimum?: number;
 }
 
-export const FiledPropsDefine = {
+export const FieldPropsDefine = {
   schema: {
     type: Object as PropType<Schema>,
     required: true,
@@ -68,7 +68,7 @@ export const FiledPropsDefine = {
 } as const;
 
 export const TypeHelperComponent = defineComponent({
-  props: FiledPropsDefine,
+  props: FieldPropsDefine,
 });
 
 export type CommonFieldType = typeof TypeHelperComponent;

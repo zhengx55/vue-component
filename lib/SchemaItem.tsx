@@ -3,13 +3,13 @@ import NumberField from './fields/NumberField';
 import StringField from './fields/StringField';
 import ObjectField from './fields/ObjectField';
 import ArrayField from './fields/ArrayField';
-import { SchemaTypes, FiledPropsDefine } from './types';
+import { SchemaTypes, FieldPropsDefine } from './types';
 import { retrieveSchema } from './utils';
 
 // assign schema render tasks to different schema components
 export default defineComponent({
   name: 'SchemaItem',
-  props: FiledPropsDefine,
+  props: FieldPropsDefine,
   setup(props) {
     const retrieveSchemaRef = computed(() => {
       const { schema, rootSchema, value } = props;
