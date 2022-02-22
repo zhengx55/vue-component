@@ -16,7 +16,7 @@ export default defineComponent({
     });
 
     return () => {
-      const { schema } = props;
+      const { schema, rootSchema, value } = props;
       //TODD: if type is undefined, estimate type for user input
       const retrieveSchema = retrieveSchemaRef.value;
       const type = schema.type;

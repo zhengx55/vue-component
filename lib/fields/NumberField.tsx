@@ -7,6 +7,7 @@ export default defineComponent({
   props: FiledPropsDefine,
   setup(props) {
     const handleChange = (e: Event) => {
+      console.log('hi');
       const target = e.target as HTMLInputElement;
       const num = Number(target.value);
       if (Number.isNaN(num)) {

@@ -1,6 +1,7 @@
 import { defineComponent, PropType, provide } from 'vue';
 import SchemaItem from './SchemaItem';
 import { Schema } from './types';
+import { SchemaFormContextKey } from './context';
 
 export default defineComponent({
   props: {
@@ -23,13 +24,12 @@ export default defineComponent({
     };
 
     // use provide/Inject composition api to prevent circular dependencies
-    const context = { SchemaItem };
+    const context: any = { SchemaItem };
 
-    provide('item-component', context);
+    provide(SchemaFormContextKey, context);
 
     return () => {
       const { schema, value } = props;
-
       return (
         <SchemaItem
           schema={schema}
