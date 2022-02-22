@@ -1,11 +1,11 @@
-import { defineComponent, inject } from 'vue';
+import { defineComponent } from 'vue';
 import { useVJSFContext } from '../context';
 
 import { FiledPropsDefine } from '../types';
 import { isObject } from '../utils';
-const SchemaItemHelper = defineComponent({ props: FiledPropsDefine });
 
-type SchemaItemDefine = typeof SchemaItemHelper;
+// const SchemaItemHelper = defineComponent({ props: FiledPropsDefine });
+// type SchemaItemDefine = typeof SchemaItemHelper;
 
 export default defineComponent({
   name: 'ObjectField',
@@ -28,14 +28,16 @@ export default defineComponent({
       const { SchemaItem } = context;
       const properties = schema.properties || {};
       const currentValue: any = isObject(value) ? value : {};
-      return Object.keys(properties).map((key: string, index: number) => {
-        <SchemaItem
-          key={index}
-          schema={schema}
-          value={currentValue[key]}
-          rootSchema={rootSchema}
-          onChange={(v: any) => handleObjectFieldChange(key, v)}
-        ></SchemaItem>;
+      return Object.keys(properties).map((k: string, index: number) => {
+        return (
+          <SchemaItem
+            schema={properties[k]}
+            rootSchema={rootSchema}
+            value={currentValue[k]}
+            key={index}
+            onChange={(v: any) => handleObjectFieldChange(k, v)}
+          />
+        );
       });
     };
   },

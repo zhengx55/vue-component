@@ -6,10 +6,9 @@ export default defineComponent({
   name: 'NumberField',
   props: FiledPropsDefine,
   setup(props) {
-    const handleChange = (e: Event) => {
-      console.log('hi');
-      const target = e.target as HTMLInputElement;
-      const num = Number(target.value);
+    const handleChange = (e: any) => {
+      const value = e.target.value;
+      const num = Number(value);
       if (Number.isNaN(num)) {
         props.onChange(undefined);
       } else {
@@ -17,14 +16,17 @@ export default defineComponent({
       }
     };
 
-    const handleDebounceChange = debounce(handleChange, 1000);
+    const handleDebounceChange = debounce(handleChange, 500);
 
-    return () => (
-      <input
-        type="number"
-        value={props.value}
-        onChange={handleDebounceChange}
-      />
-    );
+    return () => {
+      const { value } = props;
+      return (
+        <input
+          type="number"
+          value={value as any}
+          onChange={handleDebounceChange}
+        />
+      );
+    };
   },
 });
